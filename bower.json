@@ -1,0 +1,16 @@
+{
+    "name": "angular-modal-confirm",
+    "main": "angular-modal-confirm.js",
+    "authors": [
+        "Edward paulino <edward.xuluc@creatibot.com>"
+    ],
+    "description": "Modal de confirmación",
+    "keywords": [
+        "angular",
+        "modal",
+        "confirm",
+    ],
+    "license": "MIT",
+    "homepage": "",
+    "version": "0.0.1"
+}
