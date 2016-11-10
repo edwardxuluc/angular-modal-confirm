@@ -2,6 +2,8 @@
 
 angular.module('angular.modal.confirm', [])
 
+.value('angularModalConfirmDefaults', {})
+
 .factory('angularModalConfirm', function( $modal, $templateCache ) {
     
     $templateCache.put('views/angular-modal-confirm.html', 
@@ -41,27 +43,30 @@ angular.module('angular.modal.confirm', [])
     };
 })
 
-.value('angularModalConfirmDefaults', {
-    title           : 'Confirmar',
-    message         : '¿Esta seguro que desea realizar la acción?',
-    confirmBtnClass : 'btn btn-success',
-    confirmBtnIcon  : 'fa fa-check',
-    confirmBtnText  : 'Aceptar',
-    cancelBtnClass  : 'btn btn-default',
-    cancelBtnIcon   : 'fa fa-times',
-    cancelBtnText   : 'Cancelar',
-})
-
 .controller('angularModalConfirmCtrl', function ( $scope, $modalInstance, AlertaService, configuracion, angularModalConfirmDefaults ){
+    
+    var defaults = {
+        title           : 'Confirmar',
+        message         : '¿Está seguro que desea realizar la acción?',
+        confirmBtnClass : 'btn btn-success',
+        confirmBtnIcon  : 'fa fa-check',
+        confirmBtnText  : 'Aceptar',
+        cancelBtnClass  : 'btn btn-default',
+        cancelBtnIcon   : 'fa fa-times',
+        cancelBtnText   : 'Cancelar',
+    };
+
+    angular.extend( defaults, angularModalConfirmDefaults );
+
     $scope.params = {
-        title           : configuracion.title           || angularModalConfirmDefaults.title,
-        message         : configuracion.message         || angularModalConfirmDefaults.message,
-        confirmBtnClass : configuracion.confirmBtnClass || angularModalConfirmDefaults.confirmBtnClass,
-        confirmBtnIcon  : configuracion.confirmBtnIcon  || angularModalConfirmDefaults.confirmBtnIcon,
-        confirmBtnText  : configuracion.confirmBtnTxt   || angularModalConfirmDefaults.confirmBtnText,
-        cancelBtnClass  : configuracion.cancelBtnClass  || angularModalConfirmDefaults.cancelBtnClass,
-        cancelBtnIcon   : configuracion.cancelBtnIcon   || angularModalConfirmDefaults.cancelBtnIcon,
-        cancelBtnText   : configuracion.cancelBtnTxt    || angularModalConfirmDefaults.cancelBtnText,
+        title           : configuracion.title           || defaults.title,
+        message         : configuracion.message         || defaults.message,
+        confirmBtnClass : configuracion.confirmBtnClass || defaults.confirmBtnClass,
+        confirmBtnIcon  : configuracion.confirmBtnIcon  || defaults.confirmBtnIcon,
+        confirmBtnText  : configuracion.confirmBtnTxt   || defaults.confirmBtnText,
+        cancelBtnClass  : configuracion.cancelBtnClass  || defaults.cancelBtnClass,
+        cancelBtnIcon   : configuracion.cancelBtnIcon   || defaults.cancelBtnIcon,
+        cancelBtnText   : configuracion.cancelBtnTxt    || defaults.cancelBtnText,
     };
 
     $scope.aceptar = function (){
