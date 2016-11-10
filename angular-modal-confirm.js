@@ -76,4 +76,4 @@ angular.module('angular.modal.confirm', [])
     $scope.cancelar = function (){
         $modalInstance.dismiss();
     };
-});
+})
