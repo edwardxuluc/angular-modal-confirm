@@ -29,7 +29,7 @@ angular.module('angular.modal.confirm', [])
     );
 
     return {
-        create : function( configuracion ){
+        confirm : function( configuracion ){
             return $modal.open({
                 templateUrl: 'views/angular-modal-confirm.html',
                 controller: 'angularModalConfirmCtrl',

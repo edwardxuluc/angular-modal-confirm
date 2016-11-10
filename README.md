@@ -9,13 +9,13 @@ bower install angular-modal-confirm
 ## Importación
 
 ```javascript
-angular.module('myModule', ['mwl.confirm']);
+angular.module('myModule', ['angular.modal.confirm']);
 ```
 ## Configuracion
 
 ```javascript
 .value('angularModalConfirmDefaults',{
-    title           : 'Nuevo titulo',
+    title           : 'Titulo',
     message         : '¿Está seguro que desea realizar la acción?',
     confirmBtnClass : 'btn btn-success',
     confirmBtnIcon  : 'fa fa-check',
@@ -27,7 +27,7 @@ angular.module('myModule', ['mwl.confirm']);
 ```
 ## Uso
 ```javascript
-angularModalConfirm.create({ title : 'Eliminar', message : '¿Está seguro que desea eliminar el producto?' }).then( function (){
+ angularModalConfirm.confirm({ title : 'Confirmar', message : '¿Está seguro que desea realizar la acción?' }).then( function (){
     console.log('aceptar');
 }, function (){
     console.log('cancelar');
