@@ -6,6 +6,11 @@ Edward paulino xuluc chulim
 ```bash
 bower install angular-modal-confirm
 ```
+
+```
+<script src="bower_components/angular-modal-confirm/angular-modal-confirm.js"></script>
+```
+
 ## Importación
 
 ```javascript
