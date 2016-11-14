@@ -7,7 +7,7 @@ angular.module('angular.modal.confirm', [])
 .factory('angularModalConfirm', function( $modal, $templateCache, angularModalConfirmDefaults ) {
     
     $templateCache.put('views/angular-modal-confirm.html', 
-        '<div class="modal-header bg-default" style="font-size: 16px;">' +
+        '<div class="modal-header {{params.titleClass}}" style="font-size: 16px;">' +
         '   <strong>{{params.title}}</strong>' +
         '    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancelar()">'+
         '        <i class="fa fa-times"></i>' +
@@ -47,6 +47,7 @@ angular.module('angular.modal.confirm', [])
     
     var defaults = {
         title           : 'Confirmar',
+        titleClass      : 'bg-default',
         message         : '¿Está seguro que desea realizar la acción?',
         confirmBtnClass : 'btn btn-success',
         confirmBtnIcon  : 'fa fa-check',
