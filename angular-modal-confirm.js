@@ -4,7 +4,7 @@ angular.module('angular.modal.confirm', [])
 
 .value('angularModalConfirmDefaults', {})
 
-.factory('angularModalConfirm', function( $modal, $templateCache ) {
+.factory('angularModalConfirm', function( $modal, $templateCache, angularModalConfirmDefaults ) {
     
     $templateCache.put('views/angular-modal-confirm.html', 
         '<div class="modal-header bg-default" style="font-size: 16px;">' +
@@ -31,7 +31,7 @@ angular.module('angular.modal.confirm', [])
     return {
         confirm : function( configuracion ){
             return $modal.open({
-                templateUrl: 'views/angular-modal-confirm.html',
+                templateUrl: angularModalConfirmDefaults.template || 'views/angular-modal-confirm.html',
                 controller: 'angularModalConfirmCtrl',
                 resolve: {
                     configuracion : function(){
